@@ -1,0 +1,32 @@
+{% extends 'base/base.html' %}
+{% block content %}
+<h2 class="text-2xl m-5 font-bold">Create A Post</h2>
+<div class="container py-3 mx-5">
+    
+<form method="post" class="bg-white shadow-md m-5 px-4 rounded pt-3 pb-4 mb-2 w-3/5" enctype="multipart/form-data">
+  {% csrf_token %} 
+  <div class="mb-2">
+    <label class="block text-grey-700 text-sm font-bold mb-2" for="">Add a Title</label>
+    <div class="shadow appearance-none border rounded py-2 px-3 mr-20 text-grey-700">
+      {{ form.title }}
+    </div>
+   
+  </div>
+  <div class="mb-2">
+    <label class="block text-grey-700 text-sm font-bold mb-2" for="">Upload an image</label>
+    <div class="shadow appearance-none border rounded py-2 px-3 mr-20 text-grey-700">
+      {{ form.image }}
+    </div>
+   
+  </div>
+  <div class="mb-2">
+    <label class="block text-grey-700 text-sm font-bold mb-2" for="">Add a text</label>
+    <div class="shadow appearance-none border rounded py-2 px-3 mr-20 text-grey-700">
+      {{ form.body }}
+    </div>
+  </div>
+   <button type="submit" class="bg-green-500 text-white my-5 px-5 py-2">Submit</button>
+</form>
+
+</div>
+{% endblock %}
